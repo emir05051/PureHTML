@@ -1,0 +1,44 @@
+body {
+  background-color: #c34b30;
+}
+.main {
+  background-color: #c34b30;
+  color: #f5e2bf;
+  max-width: 960px;
+  padding: 80px 20px;
+  margin: 0 auto;
+}
+.square {
+  background-color: #f5e2bf;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 1;
+  transform: skew(-5deg) translate(-7px);
+}
+.img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+#Layer_1 {
+  fill: #f5e2bf;
+}
+@media (max-width: 700px) {
+  .adaptive {
+    flex-direction: column-reverse;
+  }
+  .adaptive div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .adaptive :not(:first-child) {
+    align-items: center;
+  }
+  #Layer_1 {
+    height: 65px !important;
+  }
+}

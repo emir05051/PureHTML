@@ -1,0 +1,33 @@
+.ul_hidden {
+  background-color: #f5e2bf;
+  padding: 20px 5px;
+  padding-top: 0px;
+  margin: 0;
+  display: none;
+}
+.ul_item {
+  list-style-type: none;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+.ul_item:first-child {
+  margin-top: 0;
+}
+@media (max-width: 750px) {
+  .header_a span {
+    display: none;
+  }
+  .header_logo {
+    width: 50px;
+  }
+}
+@media (max-width: 560px) {
+  .header_ul {
+    display: none;
+  }
+  .hamburger_menu {
+    display: inline;
+    cursor: pointer;
+  }
+}

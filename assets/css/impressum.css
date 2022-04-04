@@ -1,0 +1,12 @@
+body {
+  background-color: #f5e2bf;
+}
+.main {
+  background-color: #c34b30;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #f5e2bf;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}

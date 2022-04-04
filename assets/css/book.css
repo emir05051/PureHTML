@@ -1,0 +1,83 @@
+img {
+  width: 300px;
+}
+p {
+  margin: 5px 0px;
+}
+.author,
+.author:before {
+  font-size: 20px;
+  color: #888888;
+}
+.author:before {
+  content: "By ";
+}
+.book_wrap {
+  padding: 45px 100px;
+}
+.book {
+  background-color: #fff;
+  max-width: 1200px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 1px 24px 0 rgb(0 0 0 / 13%);
+}
+.button {
+  background-color: #c34b30;
+  box-shadow: 0 0 6px 0 #c34b30;
+  padding: 14px 24px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.buttons {
+  padding: 10px 100px 10px 0;
+}
+
+@media (max-width: 970px) {
+  /* .buttons {
+    width: 100%;
+  } */
+  .book_buttons {
+    flex-direction: column;
+  }
+  .adaptive_container {
+    flex-direction: column-reverse;
+  }
+  .buttons {
+    align-content: center;
+    padding-right: 0;
+  }
+  .book_main_right {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .adaptive_container_words {
+    flex-direction: column;
+  }
+  .book_wrap {
+    padding: 10px;
+  }
+  .book {
+    padding: 5px;
+    margin: 0px;
+    flex: 0 0 100%;
+  }
+  .book_main_right img {
+    width: 50%;
+  }
+  .button {
+    padding: 5px;
+  }
+}
+@media (max-width: 430px) {
+  .book {
+    padding: 5px;
+  }
+}

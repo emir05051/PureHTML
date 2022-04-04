@@ -1,0 +1,140 @@
+body {
+  background-color: #f5e2bf;
+}
+button {
+  cursor: pointer;
+}
+.container_slice {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  padding: 100px 100px;
+}
+.form-wrap {
+  padding: 80px 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 24px 0 rgb(0 0 0 / 13%);
+  flex: 0 0 50%;
+  max-width: 50%;
+  z-index: 99;
+}
+.bottom_slice {
+  margin-right: 100px;
+  position: absolute;
+  background-color: #c34b30;
+  bottom: 0;
+  height: 400px;
+  width: calc(100% + 10%);
+  transform: skew(-5deg) translateY(80px) rotate(-3deg);
+}
+.bottom_slice_login {
+  margin-right: 100px;
+  position: absolute;
+  background-color: #c34b30;
+  bottom: 0;
+  height: 500px;
+  width: calc(100% + 10%);
+  transform: skew(3deg) translateX(-15px) translateY(80px) rotate(5deg);
+}
+.form_input,
+.form_text-area {
+  width: 100%;
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #e3e3e3;
+}
+.form_text-area {
+  resize: vertical;
+}
+.form_text-area:focus {
+  outline: none;
+}
+.form button,
+.signup {
+  background-color: #c34b30;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  box-shadow: 0 0 6px 0 #c34b30;
+  color: white;
+}
+.form_input::placeholder {
+  font-size: 15px;
+}
+.text {
+  padding-left: 20px;
+  z-index: 99;
+  color: #f5e2bf;
+}
+.text p {
+  word-wrap: break-word;
+}
+.photo {
+  width: 500px;
+  z-index: 99;
+}
+.center {
+  justify-content: center;
+}
+.buttons {
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.buttons button {
+  width: 45%;
+  padding: 12px 24px;
+  font-size: 20px;
+}
+.goodread {
+  background-color: #a27749 !important;
+  box-shadow: 0 0 6px 0 #a27749 !important;
+}
+.email {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.password {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.separator {
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+}
+.signup {
+  padding: 14px 24px;
+  font-size: 16px;
+  box-shadow: 0 0 6px 0 #943924;
+  background-color: #943924;
+}
+@media (max-width: 1020px) {
+  .container {
+    flex-direction: column;
+  }
+  .form-wrap {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1020px) {
+  .photo {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .wrapper {
+    padding: 10px;
+  }
+}
+@media (max-width: 425px) {
+  .text h1 {
+    font-size: 20px;
+  }
+  .bottom_slice {
+    height: 500px;
+  }
+}
