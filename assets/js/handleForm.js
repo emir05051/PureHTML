@@ -1,10 +1,28 @@
 window.addEventListener("load", () => {
-  document.getElementById("search").value = localStorage.getItem("search");
-  let form = document.getElementById("form");
+  let search = getId("search");
+  let form = getId("form");
+  let value;
+
+  if (search) {
+    search.value = localStorage.getItem("search");
+  }
+
+  if (!form) {
+    form = getId("form_small");
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    let value = document.getElementById("search").value;
+    if (search) {
+      value = search.value;
+    } else {
+      value = getId("input").value;
+    }
     localStorage.setItem("search", value);
     window.location.href = "search.html";
   });
 });
+
+function getId(id) {
+  return document.getElementById(id);
+}

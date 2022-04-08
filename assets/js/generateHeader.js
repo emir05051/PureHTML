@@ -25,11 +25,12 @@ window.addEventListener("load", () => {
           { className: "header_search flex" },
           $(
             "form",
-            { className: "header_search_form flex" },
+            { className: "header_search_form flex", id: "form_small" },
             $("input", {
               className: "input",
               type: "text",
               placeholder: "Search book",
+              id: "input",
             }),
             $("button", { innerText: "Search" })
           )
@@ -40,7 +41,7 @@ window.addEventListener("load", () => {
           $(
             "li",
             { className: "header_ul_item" },
-            $("a", { href: "", innerText: "Need a Book?" })
+            $("a", { href: "main.html", innerText: "Need a Book?" })
           ),
           $(
             "li",
@@ -62,4 +63,7 @@ window.addEventListener("load", () => {
     )
   );
   body.insertBefore(header, mainBody);
+  if (window.location.href.match("search.html")) {
+    document.getElementById("form_small").remove();
+  }
 });

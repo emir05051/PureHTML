@@ -1,16 +1,18 @@
 window.addEventListener("load", (e) => {
   const main = document.querySelector(".main");
-  let bookData = JSON.parse(getBook("currentBook"));
+  const bookData = JSON.parse(getBookFromLocalStorage("currentBook"));
+  document.title = bookData.title;
 
-  generateBook(main, bookData);
+  generateBookPage(main, bookData);
 });
 
-function getBook() {
+function getBookFromLocalStorage() {
   return localStorage.getItem("currentBook");
 }
 
-function generateBook(parentElement, bookData) {
+function generateBookPage(parentElement, bookData) {
   let time = randomCount();
+
   parentElement.append(
     $(
       "div",
@@ -47,15 +49,26 @@ function generateBook(parentElement, bookData) {
                   $("button", {
                     innerText: "Check it out on Amazon",
                     className: "button amazon",
+                    onclick: () => {
+                      window.location.href =
+                        "https://www.amazon.com/s?k=" +
+                        bookData.title.split(/[ -:]/gm).join("+").toLowerCase();
+                    },
                   }),
                   $("button", {
                     innerText: "Listen to the audiobook on Audible",
                     className: "button audible",
+
+                    onclick: () => {
+                      window.location.href =
+                        "https://www.audible.de/search?keywords=" +
+                        bookData.title.split(/[ -:]/gm).join("+").toLowerCase();
+                    },
                   }),
                   $(
                     "div",
                     {
-                      className: "flex row around book_buttons",
+                      className: "flex row between book_buttons",
                     },
                     $("button", {
                       innerText: "Test speed",
@@ -109,7 +122,13 @@ function generateBook(parentElement, bookData) {
               "div",
               { className: "description" },
               $("h1", { innerText: "Description" }),
-              $("p", { innerText: bookData.description })
+              $("p", {
+                innerText:
+                  bookData.description !== undefined &&
+                  bookData.description !== ""
+                    ? bookData.description
+                    : "The description is currently not available",
+              })
             )
           )
         )

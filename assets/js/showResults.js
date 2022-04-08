@@ -1,15 +1,20 @@
 window.addEventListener("load", async () => {
   let search = localStorage.getItem("search");
   let parentElement = document.querySelector(".results");
-  let data = await fetch("https://poetrydb.org/title/" + search)
+
+  const data = await fetch("https://poetrydb.org/title/" + search)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
       return data;
     });
-  if (data.length > 0) {
-    document.querySelector(".no_results").remove();
+
+  document.querySelector(".loading").remove();
+
+  if (data.status) {
+    document.querySelector(".no_results").style.display = "block";
+    return;
   }
 
   data.forEach((e) => createSearchBook(parentElement, e));
@@ -39,10 +44,11 @@ function createSearchBook(parentElement, book) {
 }
 
 function saveBook(book) {
-  let description = book.lines.reduce((acc, line) => {
+  const description = book.lines.reduce((acc, line) => {
     return acc + line;
   }, " ");
   book.description = description;
+
   localStorage.setItem("currentBook", JSON.stringify(book));
   window.location.replace("book.html");
 }

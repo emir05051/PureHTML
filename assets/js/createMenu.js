@@ -4,19 +4,16 @@ window.addEventListener("DOMContentLoaded", () => {
   let listMenu = document.querySelector(".ul_hidden");
 
   menu.addEventListener("click", () => {
-    menu.children[0].src = toggleSVG(svg);
-    listMenu.style.display = toggleMenu(listMenu);
+    toggleMenu(svg, listMenu);
   });
 });
 
-function toggleMenu(element) {
-  return element.style.display == "block" ? "none" : "block";
-}
-function toggleSVG(element) {
-  if (
-    element.src ===
-    "file:///C:/Users/Emir/Desktop/Projects/sub_site/assets/images/close.svg"
-  ) {
-    return "../assets/images/hamburger.svg";
-  } else return "../assets/images/close.svg";
+function toggleMenu(svg, listMenu) {
+  if (svg.src.match("close.svg")) {
+    svg.src = "../assets/images/hamburger.svg";
+    listMenu.style.display = "none";
+  } else {
+    svg.src = "../assets/images/close.svg";
+    listMenu.style.display = "block";
+  }
 }
